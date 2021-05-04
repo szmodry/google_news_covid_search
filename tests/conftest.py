@@ -11,3 +11,4 @@ def google_page():
     gp.open_news_page()
     gp.accept_cookies()
     yield gp
+    print("test_completed")

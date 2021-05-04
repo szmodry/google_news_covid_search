@@ -3,8 +3,9 @@ from selenium import webdriver
 from Pages.googe_page import GooglePage
 
 
-def test_news_page(google_page):
+def test_news_page(google_page: GooglePage):
     assert google_page.driver.title.startswith("Google News")
+    google_page.search("COVID-19")
 
 
 # Open https://news.google.com/
