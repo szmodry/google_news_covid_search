@@ -13,9 +13,14 @@ class GooglePage():
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
 
+    def accept_cookies(self):
+        accept_button = self.wait.until(expected_conditions.presence_of_element_located(
+            (By.XPATH, self.accept_button_xpath)))
+        accept_button.click()
+
     def open_news_page(self):
-        # self.driver.get(news_page_url)
-        self.driver.get(url="https://www.news.google.com")
+        self.driver.get(self.news_page_url)
+        # self.driver.get(url="https://www.news.google.com")
 
     def search(self, query: str):
         # search_field = self.wait.until(expected_conditions.presence_of_element(By.CLASS_NAME))

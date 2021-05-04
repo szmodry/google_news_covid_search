@@ -8,6 +8,8 @@ def test_open_news_page():
     drv = webdriver.Chrome()
     gp = GooglePage(drv)
     gp.open_news_page()
+    gp.accept_cookies()
+
     assert gp.driver.title.startswith("Google News")
 
 
