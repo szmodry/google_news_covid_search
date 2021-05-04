@@ -3,14 +3,8 @@ from selenium import webdriver
 from Pages.googe_page import GooglePage
 
 
-def test_open_news_page():
-
-    drv = webdriver.Chrome()
-    gp = GooglePage(drv)
-    gp.open_news_page()
-    gp.accept_cookies()
-
-    assert gp.driver.title.startswith("Google News")
+def test_news_page(google_page):
+    assert google_page.driver.title.startswith("Google News")
 
 
 # Open https://news.google.com/

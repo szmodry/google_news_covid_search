@@ -7,7 +7,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 class GooglePage():
     search_locator_class_name = "gb_Ue gb_sf VISqTe"
     news_page_url = "https://www.news.google.com"
-    query = "covid-19"
+    query = "COVID-19"
+    accept_button_xpath = ('//*[@id="yDmH0d"]/c-wiz/div/div/div/div[2]/div[1]/div[4]/form/div[1]/div/button/div[2]')
 
     def __init__(self, driver: WebDriver):
         self.driver = driver
@@ -25,5 +26,8 @@ class GooglePage():
     def search(self, query: str):
         # search_field = self.wait.until(expected_conditions.presence_of_element(By.CLASS_NAME))
         search_field = self.driver.find_element_by_class_name(self.search_locator_class_name)
-        search_field.send_keys(self.query)
+        search_field.send_keys(query)
+
+        # // *[ @ id = "c286"] / div / h2
+
 
